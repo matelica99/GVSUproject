@@ -3,64 +3,146 @@ package package1;
 import java.awt.event.*;
 import java.io.File;
 import java.util.*;
+import java.awt.*;
 
 import javax.swing.*;
 import javax.swing.filechooser.FileNameExtensionFilter;
 
-public class GUIMedicalForm extends JFrame implements ActionListener {
+public class GUIMedicalForm extends JPanel{
 
-	/** Main menu bar */
-	private JMenuBar menus;
-
-	/** Sub menu that hold file comands */
-	private JMenu fileMenu;
-
-	/** sub menu checkin */
-	private JMenu inMenu;
+	private JMenuItem newStart;
 	
-	/** item quits gui */
-	private JMenuItem exitItem;
+	private JMenuItem quitItem;
 	
-	/** item open text file */
 	private JMenuItem openTextItem;
-
-	/** item save text file */
+	
 	private JMenuItem saveTextItem;
 	
-	private JButton checkInButton;
+	private JFileChooser fileChooser;
 	
+	JButton normalUser;
 	
-	public GUIMedicalForm() {
+	JButton powerUser;
+	
+	private CardLayout cl;
+	
+	private ActionListener listen;
+	
+	public GUIMedicalForm(JMenuItem newStart, JMenuItem quitItem, JMenuItem openTextItem, JMenuItem saveTextItem) {
 		
-		// file menu
-		fileMenu = new JMenu("File");
+		this.newStart = newStart;
+		this.quitItem = quitItem;
+		this.openTextItem = openTextItem;
+		this.saveTextItem = saveTextItem;
 		
-		// sub Menu
-		exitItem = new JMenuItem("Exit");
-		openTextItem = new JMenuItem("Open Text");
-		saveTextItem = new JMenuItem("Save Text");
+		listen = new ButtonListener(); 
 		
-		fileMenu.add(openTextItem);
-		fileMenu.add(saveTextItem);
-		fileMenu.add(exitItem);
+		newStart.addActionListener(listen);
+		quitItem.addActionListener(listen);
+		openTextItem.addActionListener(listen);
+		saveTextItem.addActionListener(listen);
+		fileChooser = new JFileChooser();
+		cl = new CardLayout();
 		
-		exitItem.addActionListener(this);
-		openTextItem.addActionListener(this);
-		saveTextItem.addActionListener(this);
+		setSize(600, 720);
 		
-		// Button
-		checkInButton = new JButton("CHECK IN");
-		checkInButton.addActionListener(this);
+		// start
+		startPanel();
+	}
+	
+	private void startPanel() {
+
+		JPanel startPanel = new JPanel();
+
+		normalUser = new JButton("Normal User");
+		powerUser = new JButton("Power User");
 		
-		// menus
+		JPanel norm = new JPanel();
+		norm.setLayout(new GridLayout(2, 2));
+		norm.add(new JLabel("Set this program to be used by Patients"));
+		norm.add(normalUser);
 		
-		menus = new JMenuBar();
-		menu 
+		JPanel power = new JPanel();
+		power.setLayout(new GridLayout(2,2));
+		power.add(new JLabel("Set this program to be used by Administrators"));
+
+
+		norm.add(normalUser);
+		power.add(powerUser);
+
+		startPanel.add(norm);
+		startPanel.add(power);
 		
+		normalUser.addActionListener(listen);
+		powerUser.addActionListener(listen);
+		
+		this.add(startPanel);
+	}
+	
+	private void patientStartPanel() {
 		
 	}
 	
+	private void newUserSignUp() {
+		
+	}
 	
+	private void userLogin() {
+		
+	}
 	
-	
+	private class ButtonListener implements ActionListener {
+
+		public void actionPerformed(ActionEvent e) {
+			
+			if (quitItem == e.getSource()){
+				System.exit(0);
+			}
+			
+			// open text file
+					if (openTextItem == e.getSource()) {
+
+						// filter file type
+						FileNameExtensionFilter filter = new FileNameExtensionFilter(
+							"Text Document", "txt");
+						
+						fileChooser.setFileFilter(filter);
+						
+						int returnVal = fileChooser.showOpenDialog(null);
+						if (returnVal == JFileChooser.APPROVE_OPTION) {
+							if (fileChooser.getSelectedFile().canRead()
+								&& fileChooser.getSelectedFile().getPath()
+									.contains(".txt")) {
+								
+								File file = fileChooser.getSelectedFile();
+								
+								// medicalModel openext function
+								
+							} else
+								JOptionPane.showMessageDialog(null,
+									"Not executable file");
+						}
+					}
+
+					// save text file
+					if (saveTextItem == e.getSource()) {
+
+						// filter file type
+						FileNameExtensionFilter filter = new FileNameExtensionFilter(
+							"Text Document",
+							"txt");
+						fileChooser.setFileFilter(filter);
+						int returnVal = fileChooser.showSaveDialog(null);
+
+						if (returnVal == JFileChooser.APPROVE_OPTION) {
+							File file = new File(fileChooser
+								.getSelectedFile()
+								+ ".txt");
+							
+							// medicalmodel savetext
+								
+						}
+					}
+		}
+	}
 }
