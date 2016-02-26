@@ -6,18 +6,28 @@ import java.util.*;
 
 import javax.swing.*;
 
-/**
+/**********************************************************************
  * View Controller for the program.
  * 
  * @author Tuan
  *
- */
+ *********************************************************************/
 public class medicalForm {
 
+	/******************************************************************
+	 * Run the main
+	 * 
+	 * @param args
+	 *****************************************************************/
 	public static void main(String[] args) {
 		new medicalForm();
 	}
 
+	/******************************************************************
+	 * Constructor. Overides runnable
+	 * 
+	 * 
+	 *****************************************************************/
 	public medicalForm() {
 		EventQueue.invokeLater(new Runnable() {
 
@@ -43,18 +53,45 @@ public class medicalForm {
 		});
 	}
 
+	/******************************************************************
+	 * Interface Class
+	 * 
+	 * @author Tuan
+	 *
+	 *****************************************************************/
 	public interface View {
 
+		/**************************************************************
+		 * Go to home card
+		 *************************************************************/
 		public void goHome();
 
+		/**************************************************************
+		 * Go to next view in cardlayout
+		 *************************************************************/
 		public void nextView();
 
+		/*************************************************************
+		 * Go to previous view in cardlayout
+		 *************************************************************/
 		public void previousView();
 
+		/**************************************************************
+		 * go to desired view in cardlayout
+		 * 
+		 * @param id
+		 *            is the string identifier of the card
+		 *************************************************************/
 		public void gotoView(String id);
 
 	}
 
+	/******************************************************************
+	 * View Controller manipulates card layout
+	 * 
+	 * @author Tuan
+	 *
+	 *****************************************************************/
 	public static class DefaultViewController implements View {
 
 		public static final String START = "start";
@@ -66,6 +103,14 @@ public class medicalForm {
 		private Container parent;
 		private CardLayout cl;
 
+		/**************************************************************
+		 * Constructor
+		 * 
+		 * @param parent
+		 *            is the panel that will hold the card layout
+		 * @param cl
+		 *            is the card layout
+		 *************************************************************/
 		public DefaultViewController(Container parent, CardLayout cl) {
 
 			this.parent = parent;
@@ -75,14 +120,32 @@ public class medicalForm {
 			rmap = new HashMap<>(25);
 		}
 
+		/**************************************************************
+		 * Getter class
+		 * 
+		 * @return card Layout
+		 *************************************************************/
 		public CardLayout getCardLayout() {
 			return cl;
 		}
 
+		/**************************************************************
+		 * Getter class
+		 * 
+		 * @return the parent container
+		 *************************************************************/
 		public Container getParent() {
 			return parent;
 		}
 
+		/**************************************************************
+		 * Add card to the cardlayout view
+		 * 
+		 * @param comp
+		 *            is the component to be added
+		 * @param id
+		 *            is the string identifer of the card
+		 *************************************************************/
 		public void addView(Component comp, String id) {
 
 			// if not the initial card, add to views
@@ -94,6 +157,14 @@ public class medicalForm {
 			getParent().add(comp, id);
 		}
 
+		/**************************************************************
+		 * Remove card from the cardlayout view
+		 * 
+		 * @param comp
+		 *            is the component to be added
+		 * @param id
+		 *            is the string identifer of the card
+		 *************************************************************/
 		public void removeView(Component comp, String id) {
 			views.remove(comp);
 			map.remove(comp);

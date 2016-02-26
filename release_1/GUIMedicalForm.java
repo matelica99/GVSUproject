@@ -247,8 +247,8 @@ public class GUIMedicalForm extends JPanel {
 
 		// sub panels
 		JPanel ques1 = createQuestion("How did you hear about OAM");
-		JPanel ques2 = createQuestion("<html>What is the main Reason for "
-			+ "today's visit <br>	"
+		JPanel ques2 = createQuestion("<html>What is the "
+			+ "main Reason for " + "today's visit <br>	"
 			+ "Where is Your Main Compaint (Select One)</html>");
 		JPanel ques3 = createQuestion("Which Side?");
 		JPanel ques4 = createQuestion("What Type of Problem is It?");
@@ -1189,7 +1189,7 @@ public class GUIMedicalForm extends JPanel {
 		stroke.add(fiveA4);
 		stroke.add(fiveA5);
 		stroke.add(fiveA6);
-		
+
 		pageFive.add(a);
 
 		pageFive.add(this.createControlPane("PageFour", "PageSix"),
@@ -1198,7 +1198,7 @@ public class GUIMedicalForm extends JPanel {
 		JScrollPane scroll = new JScrollPane(pageFive);
 		return scroll;
 	}
-	
+
 	/******************************************************************
 	 * Create page Six
 	 * 
@@ -1206,548 +1206,557 @@ public class GUIMedicalForm extends JPanel {
 	 *****************************************************************/
 	protected JScrollPane pageSix() {
 		JPanel pageSix, a;
-		
-		JCheckBox sixA1, sixA2, sixA3, sixA4, sixA5, sixA6, sixA7, sixA8,
-		sixA9, sixA10, sixA11;
-		
-		JTextField sixAB1, sixAB2;
-		
-		JCheckBox sixZ1;
-		
-		JRadioButton sixB1, sixB2, sixB3, sixB4, sixB5, sixB6, sixB7, sixB8, sixB9,
-		sixB10, sixB11, sixB12, sixB13, sixB14,sixB15;
-		
-		JRadioButton sixC1, sixC2, sixC3, sixC4, sixC5, sixC6, sixC7, sixC8, sixC9,
-		sixC10, sixC11, sixC12;
-		
-		JRadioButton sixD1, sixD2, sixD3, sixD4, sixD5, sixD6, sixD7, sixD8, sixD9;
-		
-		JRadioButton sixE1, sixE2, sixE3, sixE4, sixE5, sixE6;
-		
-		JRadioButton sixF1, sixF2, sixF3, sixF4, sixF5, sixF6, sixF7, sixF8, sixF9,
-		sixF10, sixF11, sixF12;
-		
-		JRadioButton sixG1, sixG2, sixG3, sixG4, sixG5, sixG6, sixG7, sixG8, sixG9,
-		sixG10, sixG11, sixG12, sixG13, sixG14, sixG15;
-		
-		JRadioButton sixH1, sixH2, sixH3, sixH4, sixH5, sixH6, sixH7, sixH8, sixH9,
-		sixH10, sixH11, sixH12;
-		
-		JRadioButton sixI1, sixI2, sixI3, sixI4, sixI5, sixI6, sixI7, sixI8, sixI9;
-		
-		JRadioButton sixJ1, sixJ2, sixJ3, sixJ4, sixJ5, sixJ6;
-		
-		JRadioButton sixK1, sixK2, sixK3;
-		
-		JRadioButton sixL1, sixL2, sixL3;
-		
-		ButtonGroup weightL, fever,  chills, fatigue, nSweats, abPain, tSwallow, bowels, bStool,
-		cough, wheezing, sBreath, depression, anxiety, pUrin, sBladder, dUrin, bUrin, dVision, bVision, dHearing,
-		pEars, sGlands, seizures, dizziness, bProblems, nHeadaches, cPain, palpitations, lSwelling, iRashes,
-		sMole, jRedness, eBruising, pregnant, hDominance;
-		
-		JTextField sixLL1;
-		
-		JRadioButton sixM1, sixM2, sixM3;
-		
-		JTextField sixN1, sixN2;
-		
-		JRadioButton sixO1, sixO2, sixO3;
-		
-		JTextField sixP1;
-		
-		pageSix = new JPanel(new BorderLayout());
-		 
-		 a = new JPanel();
-		 a.setLayout(new GridLayout(36,1));
-		 a.setBackground(Color.YELLOW);
-		 //non-symptom section
-		 sixA1 = new JCheckBox("No, I am a student.");
-		 sixA2 = new JCheckBox("Yes");
-		 sixA3 = new JCheckBox("Np");
-		 sixA4 = new JCheckBox("Disabled");
-		 sixA5 = new JCheckBox("Retired");
-		 sixA6 = new JCheckBox("N/A");
-		 sixA7 = new JCheckBox("Normal Duty");
-		 sixA8 = new JCheckBox("Light Duty");
-		 sixA9 = new JCheckBox("Not working due to current condition");
-		 sixA10 = new JCheckBox("Yes");
-		 sixA11= new JCheckBox("No");
-		 sixAB1 = new JTextField();
-		 sixAB2 = new JTextField();
-		 sixZ1 = new JCheckBox("I have no current issues other than the reason I am being see.");
-		 //unexplained weight loss
-		 sixB1 = new JRadioButton("Yes");
-		 sixB2 = new JRadioButton("No");
-		 sixB3 = new JRadioButton("Unsure");
-		 //Fever
-		 sixB4 = new JRadioButton("yes");
-		 sixB5 = new JRadioButton("No");
-		 sixB6 = new JRadioButton("Unsure");
-		 //Chills
-		 sixB7 = new JRadioButton("Yes");
-		 sixB8 = new JRadioButton("No");
-		 sixB9 = new JRadioButton("Unsure");
-		 //Fatigue
-		 sixB10 = new JRadioButton("Yes");
-		 sixB11= new JRadioButton("No");
-		 sixB12 = new JRadioButton("Unsure");
-		 //night sweats
-		 sixB13 = new JRadioButton("Yes");
-		 sixB14 = new JRadioButton("No");
-		 sixB15 = new JRadioButton("Unsure");
-		 //abdominal pain/nausea/vomitting
-		 sixC1 = new JRadioButton("Yes");
-		 sixC2 = new JRadioButton("No");
-		 sixC3 = new JRadioButton("Unsure");
-		 //trouble swallowing
-		 sixC4 = new JRadioButton("Yes");
-		 sixC5 = new JRadioButton("No");
-		 sixC6 = new JRadioButton("Unsure");
-		 //change in bowel habits
-		 sixC7 = new JRadioButton("Yes");
-		 sixC8 = new JRadioButton("No");
-		 sixC9 = new JRadioButton("Unsure");
-		 //blood in stool
-		 sixC10 = new JRadioButton("Yes");
-		 sixC11 = new JRadioButton("No");
-		 sixC12 = new JRadioButton("Unsure");
-		 //cough
-		 sixD1 = new JRadioButton("Yes");
-		 sixD2 = new JRadioButton("No");
-		 sixD3 = new JRadioButton("Unsure");
-		 //wheezing
-		 sixD4 = new JRadioButton("Yes");
-		 sixD5 = new JRadioButton("No");
-		 sixD6 = new JRadioButton("Unsure");
-		 //shortness of breath
-		 sixD7 = new JRadioButton("Yes");
-		 sixD8 = new JRadioButton("No");
-		 sixD9 = new JRadioButton("Unsure");
-		 //depression
-		 sixE1 = new JRadioButton("Yes");
-		 sixE2 = new JRadioButton("No");
-		 sixE3 = new JRadioButton("Unsure");
-		 //anxiety
-		 sixE4 = new JRadioButton("Yes");
-		 sixE5 = new JRadioButton("No");
-		 sixE6 = new JRadioButton("Unsure");
-		 //painful urination
-		 sixF1 = new JRadioButton("Yes");
-		 sixF2 = new JRadioButton("No");
-		 sixF3 = new JRadioButton("Unsure");
-		 //sense of full bladder
-		 sixF4 = new JRadioButton("Yes");
-		 sixF5 = new JRadioButton("No");
-		 sixF6 = new JRadioButton("Unsure");
-		 //difficulty with urination
-		 sixF7 = new JRadioButton("Yes");
-		 sixF8 = new JRadioButton("No");
-		 sixF9 = new JRadioButton("Unsure");
-		 //blood in urine
-		 sixF10 = new JRadioButton("Yes");
-		 sixF11 = new JRadioButton("No");
-		 sixF12= new JRadioButton("Unsure");
-		 //double vision, blackouts or headaches
-		 sixG1 = new JRadioButton("Yes");
-		 sixG2 = new JRadioButton("No");
-		 sixG3 = new JRadioButton("Unsure");
-		 //blurred vision
-		 sixG4 = new JRadioButton("Yes");
-		 sixG5 = new JRadioButton("No");
-		 sixG6 = new JRadioButton("Unsure");
-		 //difficulty hearing
-		 sixG7 = new JRadioButton("Yes");
-		 sixG8 = new JRadioButton("No");
-		 sixG9 = new JRadioButton("Unsure");
-		 //pain/ringing in ears
-		 sixG10 = new JRadioButton("Yes");
-		 sixG11 = new JRadioButton("No");
-		 sixG12 = new JRadioButton("Unsure");
-		 //swollen neck glands
-		 sixG13 = new JRadioButton("Yes");
-		 sixG14 = new JRadioButton("No");
-		 sixG15 = new JRadioButton("Unsure");
-		 //seizures
-		 sixH1 = new JRadioButton("Yes");
-		 sixH2 = new JRadioButton("No");
-		 sixH3 = new JRadioButton("Unsure");
-		 //dizziness
-		 sixH4 = new JRadioButton("Yes");
-		 sixH5 = new JRadioButton("No");
-		 sixH6 = new JRadioButton("Unsure");
-		 //balance problems
-		 sixH7 = new JRadioButton("Yes");
-		 sixH8 = new JRadioButton("No");
-		 sixH9 = new JRadioButton("Unsure");
-		 //New headaches
-		 sixH10 = new JRadioButton("Yes");
-		 sixH11 = new JRadioButton("No");
-		 sixH12 = new JRadioButton("Unsure");
-		 //chest pain
-		 sixI1 = new JRadioButton("Yes");
-		 sixI2 = new JRadioButton("No");
-		 sixI3 = new JRadioButton("Unsure");
-		 //palpitations
-		 sixI4 = new JRadioButton("Yes");
-		 sixI5 = new JRadioButton("No");
-		 sixI6 = new JRadioButton("Unsure");
-		 //leg/feet swelling
-		 sixI7 = new JRadioButton("Yes");
-		 sixI8 = new JRadioButton("No");
-		 sixI9 = new JRadioButton("Unsure");
-		 //itching/rashes
-		 sixJ1 = new JRadioButton("Yes");
-		 sixJ2 = new JRadioButton("No");
-		 sixJ3 = new JRadioButton("Unsure");
-		 //sores/bleeding mole
-		 sixJ4 = new JRadioButton("Yes");
-		 sixJ5 = new JRadioButton("No");
-		 sixJ6 = new JRadioButton("Unsure");
-		 //joint sweling or redness
-		 sixK1 = new JRadioButton("Yes");
-		 sixK2 = new JRadioButton("No");
-		 sixK3 = new JRadioButton("Unsure");
-		 //easy bruising
-		 sixL1 = new JRadioButton("Yes");
-		 sixL2 = new JRadioButton("No");
-		 sixL3 = new JRadioButton("Unsure");
-		 //"other;" textfield
-		 sixLL1 = new JTextField();
-		 //pregnant area
-		 sixM1 = new JRadioButton("Yes");
-		 sixM2 = new JRadioButton("No");
-		 sixM3 = new JRadioButton("Unsure");
-		 //Height in feet/inches
-		 sixN1 = new JTextField();
-		 sixN2 = new JTextField();
-		 //hand dominance
-		 sixO1 = new JRadioButton("Right");
-		 sixO2 = new JRadioButton("Left");
-		 sixO3 = new JRadioButton("Weight");
-		 //weight
-		 sixP1 = new JTextField();
-		 
-		 pageSix.add(a);
-		 a.add(sixA1);
-		 a.add(sixA2);
-		 a.add(sixA3);
-		 a.add(sixA4);
-		 a.add(sixA5);
-		 a.add(sixA6);
-		 a.add(sixA7);
-		 a.add(sixA8);
-		 a.add(sixA9);
-		 a.add(sixA10);
-		 a.add(sixA11);
-		 a.add(sixAB1);
-		 a.add(sixAB2);
-		 a.add(sixZ1);
-		 a.add(sixB1);
-		 a.add(sixB2);
-		 a.add(sixB3);
-		 a.add(sixB4);
-		 a.add(sixB5);
-		 a.add(sixB6);
-		 a.add(sixB7);
-		 a.add(sixB8);
-		 a.add(sixB9);
-		 a.add(sixB10);
-		 a.add(sixB11);
-		 a.add(sixB12);
-		 a.add(sixB13);
-		 a.add(sixB14);
-		 a.add(sixB15);
-		 a.add(sixC1);
-		 a.add(sixC2);
-		 a.add(sixC3);
-		 a.add(sixC4);
-		 a.add(sixC5);
-		 a.add(sixC6);
-		 a.add(sixC7);
-		 a.add(sixC8);
-		 a.add(sixC9);
-		 a.add(sixC10);
-		 a.add(sixC11);
-		 a.add(sixC12);
-		 a.add(sixD1);
-		 a.add(sixD2);
-		 a.add(sixD3);
-		 a.add(sixD4);
-		 a.add(sixD5);
-		 a.add(sixD6);
-		 a.add(sixD7);
-		 a.add(sixD8);
-		 a.add(sixD9);
-		 a.add(sixE1);
-		 a.add(sixE2);
-		 a.add(sixE3);
-		 a.add(sixE4);
-		 a.add(sixE5);
-		 a.add(sixE6);
-		 a.add(sixF1);
-		 a.add(sixF2);
-		 a.add(sixF3);
-		 a.add(sixF4);
-		 a.add(sixF5);
-		 a.add(sixF6);
-		 a.add(sixF7);
-		 a.add(sixF8);
-		 a.add(sixF9);
-		 a.add(sixF10);
-		 a.add(sixF11);
-		 a.add(sixF12);
-		 a.add(sixG1);
-		 a.add(sixG2);
-		 a.add(sixG3);
-		 a.add(sixG4);
-		 a.add(sixG5);
-		 a.add(sixG6);
-		 a.add(sixG7);
-		 a.add(sixG8);
-		 a.add(sixG9);
-		 a.add(sixG10);
-		 a.add(sixG11);
-		 a.add(sixG12);
-		 a.add(sixG13);
-		 a.add(sixG14);
-		 a.add(sixG15);
-		 a.add(sixH1);
-		 a.add(sixH2);
-		 a.add(sixH3);
-		 a.add(sixH4);
-		 a.add(sixH5);
-		 a.add(sixH6);
-		 a.add(sixH7);
-		 a.add(sixH8);
-		 a.add(sixH9);
-		 a.add(sixH10);
-		 a.add(sixH11);
-		 a.add(sixH12);
-		 a.add(sixI1);
-		 a.add(sixI2);
-		 a.add(sixI3);
-		 a.add(sixI4);
-		 a.add(sixI5);
-		 a.add(sixI6);
-		 a.add(sixI7);
-		 a.add(sixI8);
-		 a.add(sixI9);
-		 a.add(sixJ1);
-		 a.add(sixJ2);
-		 a.add(sixJ3);
-		 a.add(sixJ4);
-		 a.add(sixJ5);
-		 a.add(sixJ6);
-		 a.add(sixK1);
-		 a.add(sixK2);
-		 a.add(sixK3);
-		 a.add(sixL1);
-		 a.add(sixL2);
-		 a.add(sixL3);
-		 a.add(sixLL1);
-		 a.add(sixM1);
-		 a.add(sixM2);
-		 a.add(sixM3);
-		 a.add(sixN1);
-		 a.add(sixN2);
-		 a.add(sixO1);
-		 a.add(sixO2);
-		 a.add(sixO3);
-		 a.add(sixP1);
-		 //radio button groups by symptom
-		 weightL = new ButtonGroup();
-		 weightL.add(sixB1);
-		 weightL.add(sixB2); 
-		 weightL.add(sixB3);
-		 fever = new ButtonGroup();
-		 fever.add(sixB4);
-		 fever.add(sixB5);
-		 fever.add(sixB6);
-		 chills= new ButtonGroup();
-		 chills.add(sixB7);
-		 chills.add(sixB8);
-		 chills.add(sixB9);
-		 fatigue = new ButtonGroup();
-		 fatigue.add(sixB10);
-		 fatigue.add(sixB11);
-		 fatigue.add(sixB12);
-		 
-		 nSweats = new ButtonGroup();
-		 nSweats.add(sixB13);
-		 nSweats.add(sixB14);
-		 nSweats.add(sixB15);
-		 
-		 abPain = new ButtonGroup();
-		 abPain.add(sixC1);
-		 abPain.add(sixC2);
-		 abPain.add(sixC3);
-		 
-		 tSwallow = new ButtonGroup();
-		 tSwallow.add(sixC4);
-		 tSwallow.add(sixC5);
-		 tSwallow.add(sixC6);
-		 
-		 bowels= new ButtonGroup();
-		 bowels.add(sixC7);
-		 bowels.add(sixC8);
-		 bowels.add(sixC9);
-		 
-		 bStool = new ButtonGroup();
-		 bStool.add(sixC10);
-		 bStool.add(sixC11);
-		 bStool.add(sixC12);
-		 
-		 cough = new ButtonGroup();
-		 cough.add(sixD1);
-		 cough.add(sixD2);
-		 cough.add(sixD3);
-		 
-		 wheezing = new ButtonGroup();
-		 wheezing.add(sixD4);
-		 wheezing.add(sixD5);
-		 wheezing.add(sixD6);
-		 
-		 sBreath= new ButtonGroup();
-		 sBreath.add(sixD7);
-		 sBreath.add(sixD8);
-		 sBreath.add(sixD9);
-		 
-		 depression = new ButtonGroup();
-		 depression.add(sixE1);
-		 depression.add(sixE2);
-		 depression.add(sixE3);
-		 
-		 anxiety = new ButtonGroup();
-		 anxiety.add(sixE4);
-		 anxiety.add(sixE5);
-		 anxiety.add(sixE6);
-		 
-		 pUrin = new ButtonGroup();
-		 pUrin.add(sixF1);
-		 pUrin.add(sixF2);
-		 pUrin.add(sixF3);
-		 
-		 sBladder = new ButtonGroup();
-		 sBladder.add(sixF4);
-		 sBladder.add(sixF5);
-		 sBladder.add(sixF6);
-		 
-		 dUrin = new ButtonGroup();
-		 dUrin.add(sixF7);
-		 dUrin.add(sixF8);
-		 dUrin.add(sixF9);
-		 
-		 bUrin = new ButtonGroup();
-		 bUrin.add(sixF10);
-		 bUrin.add(sixF11);
-		 bUrin.add(sixF12);
-		 
-		 dVision = new ButtonGroup();
-		 dVision.add(sixG1);
-		 dVision.add(sixG2);
-		 dVision.add(sixG3);
-		 
-		 bVision = new ButtonGroup();
-		 bVision.add(sixG4);
-		 bVision.add(sixG5);
-		 bVision.add(sixG6);
-		 
-		 dHearing = new ButtonGroup();
-		 dHearing.add(sixG7);
-		 dHearing.add(sixG8);
-		 dHearing.add(sixG9);
-		 
-		 pEars = new ButtonGroup();
-		 pEars.add(sixG10);
-		 pEars.add(sixG11);
-		 pEars.add(sixG12);
-		 
-		 sGlands = new ButtonGroup();
-		 sGlands.add(sixG13);
-		 sGlands.add(sixG14);
-		 sGlands.add(sixG15);
-		 
-		 seizures = new ButtonGroup();
-		 seizures.add(sixH1);
-		 seizures.add(sixH2);
-		 seizures.add(sixH3);
-		 
-		 dizziness = new ButtonGroup();
-		 dizziness.add(sixH4);
-		 dizziness.add(sixH5);
-		 dizziness.add(sixH6);
-		 
-		 bProblems = new ButtonGroup();
-		 bProblems.add(sixH7);
-		 bProblems.add(sixH8);
-		 bProblems.add(sixH9);
-		 
-		 nHeadaches = new ButtonGroup();
-		 nHeadaches.add(sixH10);
-		 nHeadaches.add(sixH11);
-		 nHeadaches.add(sixH12);
-		 
-		 cPain = new ButtonGroup();
-		 cPain.add(sixI1);
-		 cPain.add(sixI2);
-		 cPain.add(sixI3);
-		 
-		 palpitations= new ButtonGroup();
-		 palpitations.add(sixI4);
-		 palpitations.add(sixI5);
-		 palpitations.add(sixI6);
-		 
-		 lSwelling = new ButtonGroup();
-		 lSwelling.add(sixI7);
-		 lSwelling.add(sixI8);
-		 lSwelling.add(sixI9);
-		 
-		 iRashes = new ButtonGroup();
-		 iRashes.add(sixJ1);
-		 iRashes.add(sixJ2);
-		 iRashes.add(sixJ3);
-		 
-		 sMole = new ButtonGroup();
-		 sMole.add(sixJ4);
-		 sMole.add(sixJ5);
-		 sMole.add(sixJ6);
-		 
-		 jRedness = new ButtonGroup();
-		 jRedness.add(sixK1);
-		 jRedness.add(sixK2);
-		 jRedness.add(sixK3);
-		 
-		 eBruising = new ButtonGroup();
-		 eBruising.add(sixL1);
-		 eBruising.add(sixL2);
-		 eBruising.add(sixL3);
-		 a.add(sixLL1);
-		 
-		 pregnant = new ButtonGroup();
-		 pregnant.add(sixM1);
-		 pregnant.add(sixM2);
-		 pregnant.add(sixM3);
-		 
-		 a.add(sixN1);
-		 a.add(sixN2);
-		 
-		 hDominance = new ButtonGroup();
-		 hDominance.add(sixO1);
-		 hDominance.add(sixO2);
-		 hDominance.add(sixO3);
-		 a.add(sixP1);
-		 
-		 pageSix.add(a, BorderLayout.CENTER);
-		 
-		 pageSix.add(this.createControlPane("PageFive", "PageSeven"),
-				BorderLayout.SOUTH);
 
-			JScrollPane scroll = new JScrollPane(pageSix);
-			return scroll;
-		 
+		JCheckBox sixA1, sixA2, sixA3, sixA4, sixA5, sixA6, sixA7;
+		JCheckBox sixA8, sixA9, sixA10, sixA11;
+
+		JTextField sixAB1, sixAB2;
+
+		JCheckBox sixZ1;
+
+		JRadioButton sixB1, sixB2, sixB3, sixB4, sixB5;
+		JRadioButton sixB6, sixB7, sixB8, sixB9, sixB10, sixB11;
+		JRadioButton sixB12, sixB13, sixB14, sixB15;
+
+		JRadioButton sixC1, sixC2, sixC3, sixC4, sixC5, sixC6, sixC7;
+		JRadioButton sixC8, sixC9, sixC10, sixC11, sixC12;
+
+		JRadioButton sixD1, sixD2, sixD3, sixD4;
+		JRadioButton sixD5, sixD6, sixD7, sixD8, sixD9;
+
+		JRadioButton sixE1, sixE2, sixE3, sixE4, sixE5, sixE6;
+
+		JRadioButton sixF1, sixF2, sixF3, sixF4, sixF5, sixF6;
+		JRadioButton sixF7, sixF8, sixF9, sixF10, sixF11, sixF12;
+
+		JRadioButton sixG1, sixG2, sixG3, sixG4, sixG5, sixG6;
+		JRadioButton sixG7, sixG8, sixG9, sixG10, sixG11;
+		JRadioButton sixG12, sixG13, sixG14, sixG15;
+
+		JRadioButton sixH1, sixH2, sixH3, sixH4, sixH5;
+		JRadioButton sixH6, sixH7, sixH8;
+		JRadioButton sixH9, sixH10, sixH11, sixH12;
+
+		JRadioButton sixI1, sixI2, sixI3;
+		JRadioButton sixI4, sixI5, sixI6, sixI7, sixI8, sixI9;
+
+		JRadioButton sixJ1, sixJ2, sixJ3, sixJ4, sixJ5, sixJ6;
+
+		JRadioButton sixK1, sixK2, sixK3;
+
+		JRadioButton sixL1, sixL2, sixL3;
+
+		ButtonGroup weightL, fever, chills, fatigue, nSweats, abPain;
+		ButtonGroup tSwallow, bowels, bStool, cough, wheezing, sBreath;
+		ButtonGroup depression, anxiety, pUrin, sBladder, dUrin, bUrin;
+		ButtonGroup dVision, bVision, dHearing, pEars, sGlands;
+		ButtonGroup seizures, dizziness, bProblems, nHeadaches;
+		ButtonGroup cPain, palpitations, lSwelling, iRashes, sMole;
+		ButtonGroup jRedness, eBruising, pregnant, hDominance;
+
+		JTextField sixLL1;
+
+		JRadioButton sixM1, sixM2, sixM3;
+
+		JTextField sixN1, sixN2;
+
+		JRadioButton sixO1, sixO2, sixO3;
+
+		JTextField sixP1;
+
+		pageSix = new JPanel(new BorderLayout());
+
+		a = new JPanel();
+		a.setLayout(new GridLayout(36, 1));
+		a.setBackground(Color.YELLOW);
+		// non-symptom section
+		sixA1 = new JCheckBox("No, I am a student.");
+		sixA2 = new JCheckBox("Yes");
+		sixA3 = new JCheckBox("Np");
+		sixA4 = new JCheckBox("Disabled");
+		sixA5 = new JCheckBox("Retired");
+		sixA6 = new JCheckBox("N/A");
+		sixA7 = new JCheckBox("Normal Duty");
+		sixA8 = new JCheckBox("Light Duty");
+		sixA9 = new JCheckBox("Not working due to current condition");
+		sixA10 = new JCheckBox("Yes");
+		sixA11 = new JCheckBox("No");
+		sixAB1 = new JTextField();
+		sixAB2 = new JTextField();
+		sixZ1 = new JCheckBox("I have no current issues other than"
+			+ " the reason I am being see.");
+		// unexplained weight loss
+		sixB1 = new JRadioButton("Yes");
+		sixB2 = new JRadioButton("No");
+		sixB3 = new JRadioButton("Unsure");
+		// Fever
+		sixB4 = new JRadioButton("yes");
+		sixB5 = new JRadioButton("No");
+		sixB6 = new JRadioButton("Unsure");
+		// Chills
+		sixB7 = new JRadioButton("Yes");
+		sixB8 = new JRadioButton("No");
+		sixB9 = new JRadioButton("Unsure");
+		// Fatigue
+		sixB10 = new JRadioButton("Yes");
+		sixB11 = new JRadioButton("No");
+		sixB12 = new JRadioButton("Unsure");
+		// night sweats
+		sixB13 = new JRadioButton("Yes");
+		sixB14 = new JRadioButton("No");
+		sixB15 = new JRadioButton("Unsure");
+		// abdominal pain/nausea/vomitting
+		sixC1 = new JRadioButton("Yes");
+		sixC2 = new JRadioButton("No");
+		sixC3 = new JRadioButton("Unsure");
+		// trouble swallowing
+		sixC4 = new JRadioButton("Yes");
+		sixC5 = new JRadioButton("No");
+		sixC6 = new JRadioButton("Unsure");
+		// change in bowel habits
+		sixC7 = new JRadioButton("Yes");
+		sixC8 = new JRadioButton("No");
+		sixC9 = new JRadioButton("Unsure");
+		// blood in stool
+		sixC10 = new JRadioButton("Yes");
+		sixC11 = new JRadioButton("No");
+		sixC12 = new JRadioButton("Unsure");
+		// cough
+		sixD1 = new JRadioButton("Yes");
+		sixD2 = new JRadioButton("No");
+		sixD3 = new JRadioButton("Unsure");
+		// wheezing
+		sixD4 = new JRadioButton("Yes");
+		sixD5 = new JRadioButton("No");
+		sixD6 = new JRadioButton("Unsure");
+		// shortness of breath
+		sixD7 = new JRadioButton("Yes");
+		sixD8 = new JRadioButton("No");
+		sixD9 = new JRadioButton("Unsure");
+		// depression
+		sixE1 = new JRadioButton("Yes");
+		sixE2 = new JRadioButton("No");
+		sixE3 = new JRadioButton("Unsure");
+		// anxiety
+		sixE4 = new JRadioButton("Yes");
+		sixE5 = new JRadioButton("No");
+		sixE6 = new JRadioButton("Unsure");
+		// painful urination
+		sixF1 = new JRadioButton("Yes");
+		sixF2 = new JRadioButton("No");
+		sixF3 = new JRadioButton("Unsure");
+		// sense of full bladder
+		sixF4 = new JRadioButton("Yes");
+		sixF5 = new JRadioButton("No");
+		sixF6 = new JRadioButton("Unsure");
+		// difficulty with urination
+		sixF7 = new JRadioButton("Yes");
+		sixF8 = new JRadioButton("No");
+		sixF9 = new JRadioButton("Unsure");
+		// blood in urine
+		sixF10 = new JRadioButton("Yes");
+		sixF11 = new JRadioButton("No");
+		sixF12 = new JRadioButton("Unsure");
+		// double vision, blackouts or headaches
+		sixG1 = new JRadioButton("Yes");
+		sixG2 = new JRadioButton("No");
+		sixG3 = new JRadioButton("Unsure");
+		// blurred vision
+		sixG4 = new JRadioButton("Yes");
+		sixG5 = new JRadioButton("No");
+		sixG6 = new JRadioButton("Unsure");
+		// difficulty hearing
+		sixG7 = new JRadioButton("Yes");
+		sixG8 = new JRadioButton("No");
+		sixG9 = new JRadioButton("Unsure");
+		// pain/ringing in ears
+		sixG10 = new JRadioButton("Yes");
+		sixG11 = new JRadioButton("No");
+		sixG12 = new JRadioButton("Unsure");
+		// swollen neck glands
+		sixG13 = new JRadioButton("Yes");
+		sixG14 = new JRadioButton("No");
+		sixG15 = new JRadioButton("Unsure");
+		// seizures
+		sixH1 = new JRadioButton("Yes");
+		sixH2 = new JRadioButton("No");
+		sixH3 = new JRadioButton("Unsure");
+		// dizziness
+		sixH4 = new JRadioButton("Yes");
+		sixH5 = new JRadioButton("No");
+		sixH6 = new JRadioButton("Unsure");
+		// balance problems
+		sixH7 = new JRadioButton("Yes");
+		sixH8 = new JRadioButton("No");
+		sixH9 = new JRadioButton("Unsure");
+		// New headaches
+		sixH10 = new JRadioButton("Yes");
+		sixH11 = new JRadioButton("No");
+		sixH12 = new JRadioButton("Unsure");
+		// chest pain
+		sixI1 = new JRadioButton("Yes");
+		sixI2 = new JRadioButton("No");
+		sixI3 = new JRadioButton("Unsure");
+		// palpitations
+		sixI4 = new JRadioButton("Yes");
+		sixI5 = new JRadioButton("No");
+		sixI6 = new JRadioButton("Unsure");
+		// leg/feet swelling
+		sixI7 = new JRadioButton("Yes");
+		sixI8 = new JRadioButton("No");
+		sixI9 = new JRadioButton("Unsure");
+		// itching/rashes
+		sixJ1 = new JRadioButton("Yes");
+		sixJ2 = new JRadioButton("No");
+		sixJ3 = new JRadioButton("Unsure");
+		// sores/bleeding mole
+		sixJ4 = new JRadioButton("Yes");
+		sixJ5 = new JRadioButton("No");
+		sixJ6 = new JRadioButton("Unsure");
+		// joint sweling or redness
+		sixK1 = new JRadioButton("Yes");
+		sixK2 = new JRadioButton("No");
+		sixK3 = new JRadioButton("Unsure");
+		// easy bruising
+		sixL1 = new JRadioButton("Yes");
+		sixL2 = new JRadioButton("No");
+		sixL3 = new JRadioButton("Unsure");
+		// "other;" textfield
+		sixLL1 = new JTextField();
+		// pregnant area
+		sixM1 = new JRadioButton("Yes");
+		sixM2 = new JRadioButton("No");
+		sixM3 = new JRadioButton("Unsure");
+		// Height in feet/inches
+		sixN1 = new JTextField();
+		sixN2 = new JTextField();
+		// hand dominance
+		sixO1 = new JRadioButton("Right");
+		sixO2 = new JRadioButton("Left");
+		sixO3 = new JRadioButton("Weight");
+		// weight
+		sixP1 = new JTextField();
+
+		pageSix.add(a);
+		a.add(sixA1);
+		a.add(sixA2);
+		a.add(sixA3);
+		a.add(sixA4);
+		a.add(sixA5);
+		a.add(sixA6);
+		a.add(sixA7);
+		a.add(sixA8);
+		a.add(sixA9);
+		a.add(sixA10);
+		a.add(sixA11);
+		a.add(sixAB1);
+		a.add(sixAB2);
+		a.add(sixZ1);
+		a.add(sixB1);
+		a.add(sixB2);
+		a.add(sixB3);
+		a.add(sixB4);
+		a.add(sixB5);
+		a.add(sixB6);
+		a.add(sixB7);
+		a.add(sixB8);
+		a.add(sixB9);
+		a.add(sixB10);
+		a.add(sixB11);
+		a.add(sixB12);
+		a.add(sixB13);
+		a.add(sixB14);
+		a.add(sixB15);
+		a.add(sixC1);
+		a.add(sixC2);
+		a.add(sixC3);
+		a.add(sixC4);
+		a.add(sixC5);
+		a.add(sixC6);
+		a.add(sixC7);
+		a.add(sixC8);
+		a.add(sixC9);
+		a.add(sixC10);
+		a.add(sixC11);
+		a.add(sixC12);
+		a.add(sixD1);
+		a.add(sixD2);
+		a.add(sixD3);
+		a.add(sixD4);
+		a.add(sixD5);
+		a.add(sixD6);
+		a.add(sixD7);
+		a.add(sixD8);
+		a.add(sixD9);
+		a.add(sixE1);
+		a.add(sixE2);
+		a.add(sixE3);
+		a.add(sixE4);
+		a.add(sixE5);
+		a.add(sixE6);
+		a.add(sixF1);
+		a.add(sixF2);
+		a.add(sixF3);
+		a.add(sixF4);
+		a.add(sixF5);
+		a.add(sixF6);
+		a.add(sixF7);
+		a.add(sixF8);
+		a.add(sixF9);
+		a.add(sixF10);
+		a.add(sixF11);
+		a.add(sixF12);
+		a.add(sixG1);
+		a.add(sixG2);
+		a.add(sixG3);
+		a.add(sixG4);
+		a.add(sixG5);
+		a.add(sixG6);
+		a.add(sixG7);
+		a.add(sixG8);
+		a.add(sixG9);
+		a.add(sixG10);
+		a.add(sixG11);
+		a.add(sixG12);
+		a.add(sixG13);
+		a.add(sixG14);
+		a.add(sixG15);
+		a.add(sixH1);
+		a.add(sixH2);
+		a.add(sixH3);
+		a.add(sixH4);
+		a.add(sixH5);
+		a.add(sixH6);
+		a.add(sixH7);
+		a.add(sixH8);
+		a.add(sixH9);
+		a.add(sixH10);
+		a.add(sixH11);
+		a.add(sixH12);
+		a.add(sixI1);
+		a.add(sixI2);
+		a.add(sixI3);
+		a.add(sixI4);
+		a.add(sixI5);
+		a.add(sixI6);
+		a.add(sixI7);
+		a.add(sixI8);
+		a.add(sixI9);
+		a.add(sixJ1);
+		a.add(sixJ2);
+		a.add(sixJ3);
+		a.add(sixJ4);
+		a.add(sixJ5);
+		a.add(sixJ6);
+		a.add(sixK1);
+		a.add(sixK2);
+		a.add(sixK3);
+		a.add(sixL1);
+		a.add(sixL2);
+		a.add(sixL3);
+		a.add(sixLL1);
+		a.add(sixM1);
+		a.add(sixM2);
+		a.add(sixM3);
+		a.add(sixN1);
+		a.add(sixN2);
+		a.add(sixO1);
+		a.add(sixO2);
+		a.add(sixO3);
+		a.add(sixP1);
+		// radio button groups by symptom
+		weightL = new ButtonGroup();
+		weightL.add(sixB1);
+		weightL.add(sixB2);
+		weightL.add(sixB3);
+		fever = new ButtonGroup();
+		fever.add(sixB4);
+		fever.add(sixB5);
+		fever.add(sixB6);
+		chills = new ButtonGroup();
+		chills.add(sixB7);
+		chills.add(sixB8);
+		chills.add(sixB9);
+		fatigue = new ButtonGroup();
+		fatigue.add(sixB10);
+		fatigue.add(sixB11);
+		fatigue.add(sixB12);
+
+		nSweats = new ButtonGroup();
+		nSweats.add(sixB13);
+		nSweats.add(sixB14);
+		nSweats.add(sixB15);
+
+		abPain = new ButtonGroup();
+		abPain.add(sixC1);
+		abPain.add(sixC2);
+		abPain.add(sixC3);
+
+		tSwallow = new ButtonGroup();
+		tSwallow.add(sixC4);
+		tSwallow.add(sixC5);
+		tSwallow.add(sixC6);
+
+		bowels = new ButtonGroup();
+		bowels.add(sixC7);
+		bowels.add(sixC8);
+		bowels.add(sixC9);
+
+		bStool = new ButtonGroup();
+		bStool.add(sixC10);
+		bStool.add(sixC11);
+		bStool.add(sixC12);
+
+		cough = new ButtonGroup();
+		cough.add(sixD1);
+		cough.add(sixD2);
+		cough.add(sixD3);
+
+		wheezing = new ButtonGroup();
+		wheezing.add(sixD4);
+		wheezing.add(sixD5);
+		wheezing.add(sixD6);
+
+		sBreath = new ButtonGroup();
+		sBreath.add(sixD7);
+		sBreath.add(sixD8);
+		sBreath.add(sixD9);
+
+		depression = new ButtonGroup();
+		depression.add(sixE1);
+		depression.add(sixE2);
+		depression.add(sixE3);
+
+		anxiety = new ButtonGroup();
+		anxiety.add(sixE4);
+		anxiety.add(sixE5);
+		anxiety.add(sixE6);
+
+		pUrin = new ButtonGroup();
+		pUrin.add(sixF1);
+		pUrin.add(sixF2);
+		pUrin.add(sixF3);
+
+		sBladder = new ButtonGroup();
+		sBladder.add(sixF4);
+		sBladder.add(sixF5);
+		sBladder.add(sixF6);
+
+		dUrin = new ButtonGroup();
+		dUrin.add(sixF7);
+		dUrin.add(sixF8);
+		dUrin.add(sixF9);
+
+		bUrin = new ButtonGroup();
+		bUrin.add(sixF10);
+		bUrin.add(sixF11);
+		bUrin.add(sixF12);
+
+		dVision = new ButtonGroup();
+		dVision.add(sixG1);
+		dVision.add(sixG2);
+		dVision.add(sixG3);
+
+		bVision = new ButtonGroup();
+		bVision.add(sixG4);
+		bVision.add(sixG5);
+		bVision.add(sixG6);
+
+		dHearing = new ButtonGroup();
+		dHearing.add(sixG7);
+		dHearing.add(sixG8);
+		dHearing.add(sixG9);
+
+		pEars = new ButtonGroup();
+		pEars.add(sixG10);
+		pEars.add(sixG11);
+		pEars.add(sixG12);
+
+		sGlands = new ButtonGroup();
+		sGlands.add(sixG13);
+		sGlands.add(sixG14);
+		sGlands.add(sixG15);
+
+		seizures = new ButtonGroup();
+		seizures.add(sixH1);
+		seizures.add(sixH2);
+		seizures.add(sixH3);
+
+		dizziness = new ButtonGroup();
+		dizziness.add(sixH4);
+		dizziness.add(sixH5);
+		dizziness.add(sixH6);
+
+		bProblems = new ButtonGroup();
+		bProblems.add(sixH7);
+		bProblems.add(sixH8);
+		bProblems.add(sixH9);
+
+		nHeadaches = new ButtonGroup();
+		nHeadaches.add(sixH10);
+		nHeadaches.add(sixH11);
+		nHeadaches.add(sixH12);
+
+		cPain = new ButtonGroup();
+		cPain.add(sixI1);
+		cPain.add(sixI2);
+		cPain.add(sixI3);
+
+		palpitations = new ButtonGroup();
+		palpitations.add(sixI4);
+		palpitations.add(sixI5);
+		palpitations.add(sixI6);
+
+		lSwelling = new ButtonGroup();
+		lSwelling.add(sixI7);
+		lSwelling.add(sixI8);
+		lSwelling.add(sixI9);
+
+		iRashes = new ButtonGroup();
+		iRashes.add(sixJ1);
+		iRashes.add(sixJ2);
+		iRashes.add(sixJ3);
+
+		sMole = new ButtonGroup();
+		sMole.add(sixJ4);
+		sMole.add(sixJ5);
+		sMole.add(sixJ6);
+
+		jRedness = new ButtonGroup();
+		jRedness.add(sixK1);
+		jRedness.add(sixK2);
+		jRedness.add(sixK3);
+
+		eBruising = new ButtonGroup();
+		eBruising.add(sixL1);
+		eBruising.add(sixL2);
+		eBruising.add(sixL3);
+		a.add(sixLL1);
+
+		pregnant = new ButtonGroup();
+		pregnant.add(sixM1);
+		pregnant.add(sixM2);
+		pregnant.add(sixM3);
+
+		a.add(sixN1);
+		a.add(sixN2);
+
+		hDominance = new ButtonGroup();
+		hDominance.add(sixO1);
+		hDominance.add(sixO2);
+		hDominance.add(sixO3);
+		a.add(sixP1);
+
+		pageSix.add(a, BorderLayout.CENTER);
+
+		pageSix.add(this.createControlPane("PageFive", "PageSeven"),
+			BorderLayout.SOUTH);
+
+		JScrollPane scroll = new JScrollPane(pageSix);
+		return scroll;
+
 	}
-	
+
 	/******************************************************************
 	 * Create page Seven
 	 * 
@@ -1757,305 +1766,396 @@ public class GUIMedicalForm extends JPanel {
 		JPanel a;
 		JCheckBox sevenA2, sevenA3, sevenB1, sevenB2;
 		JTextField sevenA1;
-		
-		JRadioButton sevenC1, sevenC2, sevenC3, sevenC4, sevenC5, sevenC6,
-		sevenD1, sevenD2, sevenD3, sevenD4, sevenD5, sevenD6,
-		sevenE1, sevenE2, sevenE3, sevenE4, sevenE5, sevenE6,
-		sevenF1, sevenF2, sevenF3, sevenF4, sevenF5, sevenF6;
-		
-		ButtonGroup sevenC, sevenD, sevenE, sevenF;
-		
-		JPanel pageSeven = new JPanel(new BorderLayout());
-		
-		 a = new JPanel();
-		 a.setLayout(new GridLayout(36,1));
-		 a.setBackground(Color.YELLOW);
-		 
-		 //Question 1, page 7
-		 sevenA1 = new JTextField();
-		 sevenA2 = new JCheckBox("Yes");
-		 sevenA3 = new JCheckBox("No");
-		 //Question 2, page 7
-		 sevenB1 = new JCheckBox("Yes");
-		 sevenB2 = new JCheckBox("No");
-		 
-		 // Page 7, letters = question, number = selection to be chosen
-		 sevenC1 = new JRadioButton("The pain comes and goes and is very mild.");
-		 sevenC2 = new JRadioButton("The pain is mild and does not vary much.");
-		 sevenC3 = new JRadioButton("The pain comes and goes and is moderate.");
-		 sevenC4 = new JRadioButton("The pain is moderate and does not vary much.");
-		 sevenC5 = new JRadioButton("The pain comes and goes and is severe.");
-		 sevenC6 = new JRadioButton("The pain is severe and does not vary much.");
-		
-		 sevenD1 = new JRadioButton("I do not have to change my way of washing or dressing to avoid pain.");
-		 sevenD2 = new JRadioButton("I do not normally change my way of washing or dressing even thought it causes some pain.");
-		 sevenD3 = new JRadioButton("Washing and dressing increases the pain, but I manage not to change my way of doing it.");
-		 sevenD4 = new JRadioButton("Washing and dressing increases the pain, and I find it necessary to change my way of doing it.");
-		 sevenD5 = new JRadioButton("Because of pain, i am unable to do some washing and dressing without help.");
-		 sevenD6 = new JRadioButton("Because of pain, I am unable to do any washing or dressing without help.");
-		 
-		 sevenE1 = new JRadioButton("I can lift heavy objects without extra pain.");
-		 sevenE2 = new JRadioButton("I can lift heavy object, but it causes extra pain.");
-		 sevenE3 = new JRadioButton("Pain prevents me from lifting heavy objects off the floor.");
-		 sevenE4 = new JRadioButton("Pain prevents me from lifting heavy objects off the floor, but I can manage if they are conveniently positioned.");
-		 sevenE5 = new JRadioButton("Pain prevents me from lifting heavy objects, but I can manage light/medium objects if they are conveniently positioned.");
-		 sevenE6 = new JRadioButton("I can only lift very light objects, at the most.");
-		 
-		 sevenF1 = new JRadioButton("Pain does not prevent me from walking any distance.");
-		 sevenF2 = new JRadioButton("I have some pain with walking long distances.");
-		 sevenF3 = new JRadioButton("Pain prevents me from walking long distances.");
-		 sevenF4 = new JRadioButton("Pain prevents me from walking intermediate distances.");
-		 sevenF5 = new JRadioButton("Pain prevents me from walking without a cane or crutches.");
-		 sevenF6 = new JRadioButton("Pain prevents me from walking at all.");
-		 
-		 sevenC = new ButtonGroup();
-		 sevenD = new ButtonGroup();
-		 sevenE = new ButtonGroup();
-		 sevenF = new ButtonGroup();
-		 
-		 pageSeven.add(a);
-		 a.add(sevenA1);
-		 a.add(sevenA2);
-		 a.add(sevenA3);
-		 a.add(sevenB1);
-		 a.add(sevenB2);
-		 
-		 sevenC.add(sevenC1);
-		 sevenC.add(sevenC2);
-		 sevenC.add(sevenC3);
-		 sevenC.add(sevenC4);
-		 sevenC.add(sevenC5);
-		 sevenC.add(sevenC6);
-		 
-		 sevenD.add(sevenD1);
-		 sevenD.add(sevenD2);
-		 sevenD.add(sevenD3);
-		 sevenD.add(sevenD4);
-		 sevenD.add(sevenD5);
-		 sevenD.add(sevenD6);
-		 
-		 sevenE.add(sevenE1);
-		 sevenE.add(sevenE2);
-		 sevenE.add(sevenE3);
-		 sevenE.add(sevenE4);
-		 sevenE.add(sevenE5);
-		 sevenE.add(sevenE6);
-		 
-		 sevenF.add(sevenF1);
-		 sevenF.add(sevenF2);
-		 sevenF.add(sevenF3);
-		 sevenF.add(sevenF4);
-		 sevenF.add(sevenF5);
-		 sevenF.add(sevenF6);
-		 
-		 a.add(sevenC1);
-		 a.add(sevenC2);
-		 a.add(sevenC3);
-		 a.add(sevenC4);
-		 a.add(sevenC5);
-		 a.add(sevenC6);
-		 
-		 a.add(sevenD1);
-		 a.add(sevenD2);
-		 a.add(sevenD3);
-		 a.add(sevenD4);
-		 a.add(sevenD5);
-		 a.add(sevenD6);
-		 
-		 a.add(sevenE1);
-		 a.add(sevenE2);
-		 a.add(sevenE3);
-		 a.add(sevenE4);
-		 a.add(sevenE5);
-		 a.add(sevenE6);
-		 
-		 a.add(sevenF1);
-		 a.add(sevenF2);
-		 a.add(sevenF3);
-		 a.add(sevenF4);
-		 a.add(sevenF5);
-		 a.add(sevenF6);
-		 
-		 pageSeven.add(this.createControlPane("PageSix", "PageEight"),
-				BorderLayout.SOUTH);
 
-			JScrollPane scroll = new JScrollPane(pageSeven);
-			return scroll;
+		JRadioButton sevenC1, sevenC2, sevenC3, sevenC4, sevenC5;
+		JRadioButton sevenC6, sevenD1, sevenD2, sevenD3, sevenD4;
+		JRadioButton sevenD5, sevenD6, sevenE1, sevenE2, sevenE3;
+		JRadioButton sevenE4, sevenE5, sevenE6, sevenF1, sevenF2;
+		JRadioButton sevenF3, sevenF4, sevenF5, sevenF6;
+
+		ButtonGroup sevenC, sevenD, sevenE, sevenF;
+
+		JPanel pageSeven = new JPanel(new BorderLayout());
+
+		a = new JPanel();
+		a.setLayout(new GridLayout(36, 1));
+		a.setBackground(Color.YELLOW);
+
+		// Question 1, page 7
+		sevenA1 = new JTextField();
+		sevenA2 = new JCheckBox("Yes");
+		sevenA3 = new JCheckBox("No");
+		// Question 2, page 7
+		sevenB1 = new JCheckBox("Yes");
+		sevenB2 = new JCheckBox("No");
+
+		// Page 7, letters = question, number = selection to be chosen
+		sevenC1 = new JRadioButton(
+			"The pain comes and goes and is very mild.");
+		sevenC2 = new JRadioButton(
+			"The pain is mild and does not vary much.");
+		sevenC3 = new JRadioButton(
+			"The pain comes and goes and is moderate.");
+		sevenC4 = new JRadioButton(
+			"The pain is moderate and does not vary much.");
+		sevenC5 = new JRadioButton(
+			"The pain comes and goes and is severe.");
+		sevenC6 = new JRadioButton(
+			"The pain is severe and does not vary much.");
+
+		sevenD1 = new JRadioButton(
+			"I do not have to change my way of washing or dressing"
+				+ " to avoid pain.");
+		sevenD2 = new JRadioButton(
+			"I do not normally change my way of washing or dressing"
+				+ " even thought it causes some pain.");
+		sevenD3 = new JRadioButton(
+			"Washing and dressing increases the pain, but I manage "
+				+ "not to change my way of doing it.");
+		sevenD4 = new JRadioButton(
+			"Washing and dressing increases the pain, and I find it"
+				+ " necessary to change my way of doing it.");
+		sevenD5 = new JRadioButton(
+			"Because of pain, i am unable to do some washing and "
+				+ "dressing without help.");
+		sevenD6 = new JRadioButton(
+			"Because of pain, I am unable to do any washing or "
+				+ "dressing without help.");
+
+		sevenE1 = new JRadioButton(
+			"I can lift heavy objects without extra pain.");
+		sevenE2 = new JRadioButton(
+			"I can lift heavy object, but it causes extra pain.");
+		sevenE3 = new JRadioButton(
+			"Pain prevents me from lifting heavy objects off the"
+				+ " floor.");
+		sevenE4 = new JRadioButton(
+			"Pain prevents me from lifting heavy objects off the "
+				+ "floor, but I can manage if "
+				+ "they are conveniently positioned.");
+		sevenE5 = new JRadioButton(
+			"Pain prevents me from lifting heavy objects, but I"
+				+ " can manage light/medium objects if they are "
+				+ "conveniently positioned.");
+		sevenE6 = new JRadioButton(
+			"I can only lift very light objects, at the most.");
+
+		sevenF1 = new JRadioButton(
+			"Pain does not prevent me from walking any distance.");
+		sevenF2 = new JRadioButton(
+			"I have some pain with walking long distances.");
+		sevenF3 = new JRadioButton(
+			"Pain prevents me from walking long distances.");
+		sevenF4 = new JRadioButton(
+			"Pain prevents me from walking intermediate distances.");
+		sevenF5 = new JRadioButton(
+			"Pain prevents me from walking "
+			+ "without a cane or crutches.");
+		sevenF6 = new JRadioButton(
+			"Pain prevents me from walking at all.");
+
+		sevenC = new ButtonGroup();
+		sevenD = new ButtonGroup();
+		sevenE = new ButtonGroup();
+		sevenF = new ButtonGroup();
+
+		pageSeven.add(a);
+		a.add(sevenA1);
+		a.add(sevenA2);
+		a.add(sevenA3);
+		a.add(sevenB1);
+		a.add(sevenB2);
+
+		sevenC.add(sevenC1);
+		sevenC.add(sevenC2);
+		sevenC.add(sevenC3);
+		sevenC.add(sevenC4);
+		sevenC.add(sevenC5);
+		sevenC.add(sevenC6);
+
+		sevenD.add(sevenD1);
+		sevenD.add(sevenD2);
+		sevenD.add(sevenD3);
+		sevenD.add(sevenD4);
+		sevenD.add(sevenD5);
+		sevenD.add(sevenD6);
+
+		sevenE.add(sevenE1);
+		sevenE.add(sevenE2);
+		sevenE.add(sevenE3);
+		sevenE.add(sevenE4);
+		sevenE.add(sevenE5);
+		sevenE.add(sevenE6);
+
+		sevenF.add(sevenF1);
+		sevenF.add(sevenF2);
+		sevenF.add(sevenF3);
+		sevenF.add(sevenF4);
+		sevenF.add(sevenF5);
+		sevenF.add(sevenF6);
+
+		a.add(sevenC1);
+		a.add(sevenC2);
+		a.add(sevenC3);
+		a.add(sevenC4);
+		a.add(sevenC5);
+		a.add(sevenC6);
+
+		a.add(sevenD1);
+		a.add(sevenD2);
+		a.add(sevenD3);
+		a.add(sevenD4);
+		a.add(sevenD5);
+		a.add(sevenD6);
+
+		a.add(sevenE1);
+		a.add(sevenE2);
+		a.add(sevenE3);
+		a.add(sevenE4);
+		a.add(sevenE5);
+		a.add(sevenE6);
+
+		a.add(sevenF1);
+		a.add(sevenF2);
+		a.add(sevenF3);
+		a.add(sevenF4);
+		a.add(sevenF5);
+		a.add(sevenF6);
+
+		pageSeven.add(this.createControlPane("PageSix", "PageEight"),
+			BorderLayout.SOUTH);
+
+		JScrollPane scroll = new JScrollPane(pageSeven);
+		return scroll;
 	}
-	
+
 	/******************************************************************
 	 * Create page Eight
 	 * 
 	 * @return panel of page Eight
 	 *****************************************************************/
 	protected JScrollPane pageEight() {
-		
+
 		JPanel pageEight = new JPanel(new BorderLayout());
 		JPanel a;
-		JRadioButton eightA1, eightA2, eightA3, eightA4, eightA5, eightA6,
-		 eightB1, eightB2, eightB3, eightB4, eightB5, eightB6,
-		 eightC1, eightC2, eightC3, eightC4, eightC5, eightC6,
-		 eightD1, eightD2, eightD3, eightD4, eightD5, eightD6,
-		 eightE1, eightE2, eightE3, eightE4, eightE5, eightE6,
-		 eightF1, eightF2, eightF3, eightF4, eightF5, eightF6;
-		
+		JRadioButton eightA1, eightA2, eightA3, eightA4;
+		JRadioButton eightA5, eightA6, eightB1, eightB2;
+		JRadioButton eightB3, eightB4, eightB5, eightB6;
+		JRadioButton eightC1, eightC2, eightC3, eightC4;
+		JRadioButton eightC5, eightC6, eightD1, eightD2;
+		JRadioButton eightD3, eightD4, eightD5, eightD6;
+		JRadioButton eightE1, eightE2, eightE3, eightE4; 
+		JRadioButton eightE5, eightE6, eightF1, eightF2;
+		JRadioButton eightF3, eightF4, eightF5, eightF6;
+
 		ButtonGroup eightA, eightB, eightC, eightD, eightE, eightF;
-		 a = new JPanel();
-		 a.setLayout(new GridLayout(36,1));
-		 a.setBackground(Color.YELLOW);
-		 
-		 eightA1 = new JRadioButton("Sitting Does not cause me pain.");
-		 eightA2 = new JRadioButton("I can sit as long as I need, provided I have my choice of sitting surfaces.");
-		 eightA3 = new JRadioButton("Pain prevents me from sitting more than one hour.");
-		 eightA4 = new JRadioButton("Pain prevents me from sitting more than half an hour.");
-		 eightA5 = new JRadioButton("Pain prevents me from sitting more than ten minutes.");
-		 eightA6 = new JRadioButton("Pain prevents me from sitting at all.");
-		 
-		 eightB1 = new JRadioButton("I can stand as long as I want without pain.");
-		 eightB2 = new JRadioButton("I have some pain while standing, but it does not increase with time.");
-		 eightB3 = new JRadioButton("I cannot stand for longer than one hour without increasing pain.");
-		 eightB4 = new JRadioButton("I cannot stand for longer than half an hour without increasing pain.");
-		 eightB5 = new JRadioButton("I cannot stand for more than ten minutes without increasing pain.");
-		 eightB6 = new JRadioButton("I avoid standing because it increases pain right away.");
-		 
-		 eightC1 = new JRadioButton("I have no pain bed.");
-		 eightC2 = new JRadioButton("I have pain in bed, but it does not prevent me from sleeping well.");
-		 eightC3 = new JRadioButton("Because of pain, my normal night's sleep is reduced by less than one-quarter.");
-		 eightC4 = new JRadioButton("Because of pain, my normail night's sleep is reduced by less than one-half.");
-		 eightC5 = new JRadioButton("Because of pain, my normal night's sleep is reduced by less than three-quarters.");
-		 eightC6 = new JRadioButton("Pain prevents me from sleeping at all.");
-		 
-		 eightD1 = new JRadioButton("My social life is normal and gives me no pain.");
-		 eightD2 = new JRadioButton("My social life is normal, but icnreases the degree of my pain");
-		 eightD3 = new JRadioButton("Pain has no significant effect on my social life apart from limmiting my more energetic interests.");
-		 eightD4 = new JRadioButton("Pain has restricted my social life and I do not go out very often.");
-		 eightD5 = new JRadioButton("Pain has restricted my social life to my home.");
-		 eightD6 = new JRadioButton("Pain prevents me from and social life at all.");
-		 
-		 eightE1 = new JRadioButton("I get no pain while traveling.");
-		 eightE2 = new JRadioButton("I get some pain while traveling, but none of my usual forms of travel make it any worse.");
-		 eightE3 = new JRadioButton("I get extra pain while traveling, bit it does not compel me to seek alternative forms of travel.");
-		 eightE4 = new JRadioButton("I get extra pain while traveling which compels me to seek alternative forms of travel.");
-		 eightE5 = new JRadioButton("Pain restricts all forms of travel.");
-		 eightE6 = new JRadioButton("Pain prevents all forms of travel except that done lying down.");
-		 
-		 eightF1 = new JRadioButton("My normal job/homemaking duties do not cause pain.");
-		 eightF2 = new JRadioButton("My normal duties cause me extra paing, but I can still perferm all that is required of me.");
-		 eightF3 = new JRadioButton("I can perform most of my duties, but pain prevents me from performing more physically stressful activities.");
-		 eightF4 = new JRadioButton("Pain prevents me from doing anything but light duties.");
-		 eightF5 = new JRadioButton("Pain prevents me from doing even light duties.");
-		 eightF6 = new JRadioButton("Pain prevents me from performing any job or homemaking chore.");
-		 
-		 eightA = new ButtonGroup();
-		 eightB = new ButtonGroup();
-		 eightC = new ButtonGroup();
-		 eightD = new ButtonGroup();
-		 eightE = new ButtonGroup();
-		 eightF = new ButtonGroup();
-				 
-		 pageEight.add(a);
-		 
-		 a.add(eightA1);
-		 a.add(eightA2);
-		 a.add(eightA3);
-		 a.add(eightA4);
-		 a.add(eightA5);
-		 a.add(eightA6);
-		 
-		 a.add(eightB1);
-		 a.add(eightB2);
-		 a.add(eightB3);
-		 a.add(eightB4);
-		 a.add(eightB5);
-		 a.add(eightB6);
-		 
-		 a.add(eightC1);
-		 a.add(eightC2);
-		 a.add(eightC3);
-		 a.add(eightC4);
-		 a.add(eightC5);
-		 a.add(eightC6);
-		 
-		 a.add(eightD1);
-		 a.add(eightD2);
-		 a.add(eightD3);
-		 a.add(eightD4);
-		 a.add(eightD5);
-		 a.add(eightD6);
-		 
-		 a.add(eightE1);
-		 a.add(eightE2);
-		 a.add(eightE3);
-		 a.add(eightE4);
-		 a.add(eightE5);
-		 a.add(eightE6);
-		 
-		 a.add(eightF1);
-		 a.add(eightF2);
-		 a.add(eightF3);
-		 a.add(eightF4);
-		 a.add(eightF5);
-		 a.add(eightF6);
-		 
-		 eightA.add(eightA1);
-		 eightA.add(eightA2);
-		 eightA.add(eightA3);
-		 eightA.add(eightA4);
-		 eightA.add(eightA5);
-		 eightA.add(eightA6);
-		 
-		 eightB.add(eightB1);
-		 eightB.add(eightB2);
-		 eightB.add(eightB3);
-		 eightB.add(eightB4);
-		 eightB.add(eightB5);
-		 eightB.add(eightB6);
-		 
-		 eightC.add(eightC1);
-		 eightC.add(eightC2);
-		 eightC.add(eightC3);
-		 eightC.add(eightC4);
-		 eightC.add(eightC5);
-		 eightC.add(eightC6);
-		 
-		 eightD.add(eightD1);
-		 eightD.add(eightD2);
-		 eightD.add(eightD3);
-		 eightD.add(eightD4);
-		 eightD.add(eightD5);
-		 eightD.add(eightD6);
-		 
-		 eightE.add(eightE1);
-		 eightE.add(eightE2);
-		 eightE.add(eightE3);
-		 eightE.add(eightE4);
-		 eightE.add(eightE5);
-		 eightE.add(eightE6);
-		 
-		 eightF.add(eightF1);
-		 eightF.add(eightF2);
-		 eightF.add(eightF3);
-		 eightF.add(eightF4);
-		 eightF.add(eightF5);
-		 eightF.add(eightF6);
-		 
-		 pageEight.add(this.createControlPane("PageSeven", null),
-				BorderLayout.SOUTH);
-		 
-		 JScrollPane scroll = new JScrollPane(pageEight);
-			return scroll;
+		a = new JPanel();
+		a.setLayout(new GridLayout(36, 1));
+		a.setBackground(Color.YELLOW);
+
+		eightA1 = new JRadioButton("Sitting Does not cause me pain.");
+		eightA2 = new JRadioButton(
+			"I can sit as long as I need, provided I have my"
+			+ " choice of sitting surfaces.");
+		eightA3 = new JRadioButton(
+			"Pain prevents me from sitting more than one hour.");
+		eightA4 = new JRadioButton(
+			"Pain prevents me from sitting more than half an hour.");
+		eightA5 = new JRadioButton(
+			"Pain prevents me from sitting more than ten minutes.");
+		eightA6 = new JRadioButton(
+			"Pain prevents me from sitting at all.");
+
+		eightB1 = new JRadioButton(
+			"I can stand as long as I want without pain.");
+		eightB2 = new JRadioButton(
+			"I have some pain while standing, but it does "
+			+ "not increase with time.");
+		eightB3 = new JRadioButton(
+			"I cannot stand for longer than one hour without "
+			+ "increasing pain.");
+		eightB4 = new JRadioButton(
+			"I cannot stand for longer than half an hour without"
+			+ " increasing pain.");
+		eightB5 = new JRadioButton(
+			"I cannot stand for more than ten minutes "
+			+ "without increasing pain.");
+		eightB6 = new JRadioButton(
+			"I avoid standing because it increases pain right away.");
+
+		eightC1 = new JRadioButton("I have no pain bed.");
+		eightC2 = new JRadioButton(
+			"I have pain in bed, but it does not prevent me "
+			+ "from sleeping well.");
+		eightC3 = new JRadioButton(
+			"Because of pain, my normal night's sleep is reduced "
+			+ "by less than one-quarter.");
+		eightC4 = new JRadioButton(
+			"Because of pain, my normail night's sleep is reduced "
+			+ "by less than one-half.");
+		eightC5 = new JRadioButton(
+			"Because of pain, my normal night's sleep is reduced "
+			+ "by less than three-quarters.");
+		eightC6 = new JRadioButton(
+			"Pain prevents me from sleeping at all.");
+
+		eightD1 = new JRadioButton(
+			"My social life is normal and gives me no pain.");
+		eightD2 = new JRadioButton(
+			"My social life is normal, but icnreases the degree "
+			+ "of my pain");
+		eightD3 = new JRadioButton(
+			"Pain has no significant effect on my social life apart"
+			+ " from limmiting my more energetic interests.");
+		eightD4 = new JRadioButton(
+			"Pain has restricted my social life and I do not go "
+			+ "out very often.");
+		eightD5 = new JRadioButton(
+			"Pain has restricted my social life to my home.");
+		eightD6 = new JRadioButton(
+			"Pain prevents me from and social life at all.");
+
+		eightE1 = new JRadioButton("I get no pain while traveling.");
+		eightE2 = new JRadioButton(
+			"I get some pain while traveling, but none of my usual "
+			+ "forms of travel make it any worse.");
+		eightE3 = new JRadioButton(
+			"I get extra pain while traveling, bit it does not compel"
+			+ " me to seek alternative forms of travel.");
+		eightE4 = new JRadioButton(
+			"I get extra pain while traveling which compels me to seek"
+			+ " alternative forms of travel.");
+		eightE5 = new JRadioButton(
+			"Pain restricts all forms of travel.");
+		eightE6 = new JRadioButton(
+			"Pain prevents all forms of travel except that done lying"
+			+ " down.");
+
+		eightF1 = new JRadioButton(
+			"My normal job/homemaking duties do not cause pain.");
+		eightF2 = new JRadioButton(
+			"My normal duties cause me extra paing, but I can still"
+			+ " perferm all that is required of me.");
+		eightF3 = new JRadioButton(
+			"I can perform most of my duties, but pain prevents me "
+			+ "from performing more physically stressful activities.");
+		eightF4 = new JRadioButton(
+			"Pain prevents me from doing anything but light duties.");
+		eightF5 = new JRadioButton(
+			"Pain prevents me from doing even light duties.");
+		eightF6 = new JRadioButton(
+			"Pain prevents me from performing any job or homemaking"
+			+ " chore.");
+
+		eightA = new ButtonGroup();
+		eightB = new ButtonGroup();
+		eightC = new ButtonGroup();
+		eightD = new ButtonGroup();
+		eightE = new ButtonGroup();
+		eightF = new ButtonGroup();
+
+		pageEight.add(a);
+
+		a.add(eightA1);
+		a.add(eightA2);
+		a.add(eightA3);
+		a.add(eightA4);
+		a.add(eightA5);
+		a.add(eightA6);
+
+		a.add(eightB1);
+		a.add(eightB2);
+		a.add(eightB3);
+		a.add(eightB4);
+		a.add(eightB5);
+		a.add(eightB6);
+
+		a.add(eightC1);
+		a.add(eightC2);
+		a.add(eightC3);
+		a.add(eightC4);
+		a.add(eightC5);
+		a.add(eightC6);
+
+		a.add(eightD1);
+		a.add(eightD2);
+		a.add(eightD3);
+		a.add(eightD4);
+		a.add(eightD5);
+		a.add(eightD6);
+
+		a.add(eightE1);
+		a.add(eightE2);
+		a.add(eightE3);
+		a.add(eightE4);
+		a.add(eightE5);
+		a.add(eightE6);
+
+		a.add(eightF1);
+		a.add(eightF2);
+		a.add(eightF3);
+		a.add(eightF4);
+		a.add(eightF5);
+		a.add(eightF6);
+
+		eightA.add(eightA1);
+		eightA.add(eightA2);
+		eightA.add(eightA3);
+		eightA.add(eightA4);
+		eightA.add(eightA5);
+		eightA.add(eightA6);
+
+		eightB.add(eightB1);
+		eightB.add(eightB2);
+		eightB.add(eightB3);
+		eightB.add(eightB4);
+		eightB.add(eightB5);
+		eightB.add(eightB6);
+
+		eightC.add(eightC1);
+		eightC.add(eightC2);
+		eightC.add(eightC3);
+		eightC.add(eightC4);
+		eightC.add(eightC5);
+		eightC.add(eightC6);
+
+		eightD.add(eightD1);
+		eightD.add(eightD2);
+		eightD.add(eightD3);
+		eightD.add(eightD4);
+		eightD.add(eightD5);
+		eightD.add(eightD6);
+
+		eightE.add(eightE1);
+		eightE.add(eightE2);
+		eightE.add(eightE3);
+		eightE.add(eightE4);
+		eightE.add(eightE5);
+		eightE.add(eightE6);
+
+		eightF.add(eightF1);
+		eightF.add(eightF2);
+		eightF.add(eightF3);
+		eightF.add(eightF4);
+		eightF.add(eightF5);
+		eightF.add(eightF6);
+
+		pageEight.add(this.createControlPane("PageSeven", null),
+			BorderLayout.SOUTH);
+
+		JScrollPane scroll = new JScrollPane(pageEight);
+		return scroll;
 	}
-	
 
 	/******************************************************************
-	 * Add and action where the button upon click will go to the
-	 * desired card in CardLayout
+	 * Add and action where the button upon click will go to the desired
+	 * card in CardLayout
 	 * 
 	 * @param button
 	 *            a button which will be modified
 	 * @param id
-	 *            is the string identifier of what next panel the
-	 *            button will access
+	 *            is the string identifier of what next panel the button
+	 *            will access
 	 * @return the modified button;
 	 *
 	 *****************************************************************/
@@ -2164,8 +2264,7 @@ public class GUIMedicalForm extends JPanel {
 	}
 
 	/******************************************************************
-	 * Dynamically create a JLabel and JTextField and populate a
-	 * JPanel
+	 * Dynamically create a JLabel and JTextField and populate a JPanel
 	 * 
 	 * @param label
 	 *            is the label of the text field
@@ -2185,8 +2284,7 @@ public class GUIMedicalForm extends JPanel {
 	}
 
 	/******************************************************************
-	 * Dynamically create a JLabel and JTextField and populate a
-	 * JPanel
+	 * Dynamically create a JLabel and JTextField and populate a JPanel
 	 * 
 	 * @param label
 	 *            label is the label of the text field
@@ -2209,25 +2307,28 @@ public class GUIMedicalForm extends JPanel {
 
 	/******************************************************************
 	 * Create the control pane that navigates through the cardlayout
-	 * @param prev is the id of the previous card
-	 * @param next is the id of the next card
+	 * 
+	 * @param prev
+	 *            is the id of the previous card
+	 * @param next
+	 *            is the id of the next card
 	 * @return
 	 *****************************************************************/
 	private JPanel createControlPane(String prev, String next) {
 
 		// Control panel w/ buttons
 		JPanel controls = new JPanel();
-		
+
 		if (prev != null) {
-		JButton btnPrev = new JButton("Prev");
-		btnPrev = addAction(btnPrev, prev);
-		controls.add(btnPrev);
+			JButton btnPrev = new JButton("Prev");
+			btnPrev = addAction(btnPrev, prev);
+			controls.add(btnPrev);
 		}
-		
+
 		if (next != null) {
-		JButton btnNext = new JButton("Next");
-		btnNext = addAction(btnNext, next);
-		controls.add(btnNext);
+			JButton btnNext = new JButton("Next");
+			btnNext = addAction(btnNext, next);
+			controls.add(btnNext);
 		}
 
 		return controls;
